@@ -6,17 +6,11 @@
     <div class="w-full md:w-1/2">
       <div class="flex items-center gap-4 mb-6">
         <NuxtLink to="/">
-          <img
-            src="/images/logo.png"
-            alt="MMS Logo"
-            class="w-16 sm:w-20 rounded-full object-cover"
-          />
+          <img src="/images/logo.png" alt="MMS Logo" class="w-16 sm:w-20 rounded-full object-cover" />
         </NuxtLink>
         <div class="text-[#093E65]">
-          <h2 class="text-xl sm:text-2xl font-bold">បញ្ចូលព័ត៌មានផ្លាកលេខ</h2>
-          <h2 class="text-lg sm:text-2xl font-dm-serif font-semibold">
-            Plate Number Information
-          </h2>
+          <h2 class="text-xl sm:text-2xl font-base">ចុះបញ្ជីលេខអំបោស</h2>
+          <h2 class="text-lg sm:text-2xl font-dm-serif">Broom Plate Number</h2>
         </div>
       </div>
 
@@ -29,10 +23,8 @@
             v-model="province"
             class="w-full border border-gray-300 rounded-md px-4 py-2"
           >
-            <option disabled value="">Select Province</option>
-            <option v-for="p in provinces" :key="p.code" :value="p">
-              {{ p.name_kh }} / {{ p.name }}
-            </option>
+            <option disabled value>Select Province</option>
+            <option v-for="p in provinces" :key="p.code" :value="p">{{ p.name_kh }} / {{ p.name }}</option>
           </select>
         </div>
 
@@ -54,51 +46,63 @@
           type="button"
           class="w-full bg-[#093E65] text-white font-semibold py-3 rounded-md hover:bg-[#0063AC]"
           @click="scrollToPreview"
-        >
-          Preview Plate
-        </button>
+        >Preview Plate</button>
       </form>
     </div>
 
     <!-- Plate Preview -->
-    <div
-      class="w-full md:w-1/2 flex justify-center items-center"
-      :style="{ minHeight: '320px' }"
-    >
+    <div class="w-full md:w-1/2 flex justify-center items-center" :style="{ minHeight: '160px' }">
       <div
         id="plate-preview"
-        class="relative rounded-xl shadow-xl flex flex-col items-center justify-center max-w-full"
+        class="relative rounded-xl shadow-xl flex flex-col justify-center max-w-full"
         :style="outerStyle"
       >
+        <!-- Watermark background -->
+
         <!-- White inner border -->
         <div class="rounded-lg" :style="whiteBorderStyle">
           <!-- Colored border + bg from province -->
+
           <div
-            class="rounded-md flex flex-col items-center justify-between"
+            class="rounded-md flex flex-col items-start justify-between px-6 py-4"
             :style="coloredBorderStyle"
           >
-            <!-- Logo -->
-            <img
-              src="/images/logo_long_black.png"
-              alt="MMS Logo"
-              class="h-14 object-contain mb-4"
-            />
+            <!-- Plate Number (top, full width) -->
+            <div class="space-y-1 p-2 md:p-4 flex item-start flex-col w-full">
+              <div
+                class="text-sm md:text-md font-siemreap font-bold text-sky-900 tracking-widest select-none text-left w-full"
+                style="letter-spacing: -.03em; word-break: break-word;"
+              >ស្លាកលេខអំបោស Broom Number</div>
 
-            <!-- Plate Number -->
-            <div
-              class="text-6xl font-oswald font-bold text-sky-900 tracking-widest mb-6 select-none"
-              style="letter-spacing: 0.35em; word-break: break-word; text-align: center;"
-            >
-              MMS-{{ plateNumber || '000000' }}
+              <div
+                class="text-5xl md:text-6xl font-oswald font-bold text-sky-900 tracking-widest select-none truncate text-left w-full"
+                style="letter-spacing: -.03em; word-break: break-word;"
+              >MMS-{{ plateNumber || '000000' }}</div>
             </div>
 
-            <!-- Province Names -->
-            <div class="text-center mb-2">
-              <div class="text-blue-700 font-moul text-2xl font-semibold">
-                {{ province.name_kh || 'ខេត្ត' }}
-              </div>
-              <div class="text-red-600 text-lg italic font-light">
-                {{ province.name || 'Province' }}
+            <!-- Bottom row: logo left, province right -->
+            <div class="flex w-full justify-between p-2 items-center mt-4">
+              <img src="/images/logo.png" alt="MMS Logo" class="h-12 md:h-14 object-contain" />
+
+              <div class="text-right">
+                <div
+                  class="text-sky-800 font-siemreap text-base md:text-xl font-semibold whitespace-nowrap"
+                  style="max-width: 120px;"
+                >{{ province.name_kh || 'ខេត្ត' }}</div>
+                <div
+                  class="text-red-600 text-sm font-dm-serif md:text-lg whitespace-nowrap"
+                  style="max-width: 120px;"
+                >{{ province.name || 'Province' }}</div>
+                <div
+                  class="absolute inset-0 pointer-events-none"
+                  style="
+                        background-image: url('/images/platebg.png');
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: cover;
+                        opacity: 1;
+                        "
+                ></div>
               </div>
             </div>
           </div>
@@ -109,53 +113,55 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
-import { provinces } from '@/data/provinces.js'
+import { ref, computed } from "vue";
+import { provinces } from "@/data/provinces.js";
 
-const plateNumber = ref('')
+const plateNumber = ref("");
 
 // Default province (Phnom Penh example)
-const defaultProvince = provinces.find((p) => p.code === 'KH-12')
-const province = ref(defaultProvince)
+const defaultProvince = provinces.find(p => p.code === "KH-12");
+const province = ref(defaultProvince);
 
 // Outer black border, responsive width (full on mobile, max 640px on desktop)
 const outerStyle = {
-  width: '100%',
-  maxWidth: '640px',
-  height: '320px',
-  border: '8px solid black',
-  borderRadius: '1rem',
-  boxSizing: 'border-box',
-}
+  width: "100%",
+  maxWidth: "640px",
+  height: "320px",
+  border: "1px solid gray",
+  borderRadius: ".75rem",
+  boxSizing: "border-box"
+};
 
 // White border inside outer black border
 const whiteBorderStyle = {
-  border: '8px solid white',
-  height: '100%',
-  width: '100%',
-  boxSizing: 'border-box',
-  borderRadius: '0.75rem',
-}
+  border: "10px solid white",
+  height: "100%",
+  width: "100%",
+  boxSizing: "border-box",
+  borderRadius: "1rem"
+};
 
 // Colored border + background from province JSON
 const coloredBorderStyle = computed(() => ({
-  border: province.value?.color ? `8px solid ${province.value.color}` : '8px solid #000',
-  background: province.value?.bg || '#fff',
-  height: '100%',
-  width: '100%',
-  boxSizing: 'border-box',
-  borderRadius: '0.5rem',
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  justifyContent: 'space-between',
-  padding: '1.5rem',
-}))
+  border: province.value?.color
+    ? `8px solid ${province.value.color}`
+    : "8px solid #000",
+  background: province.value?.bg || "#fff",
+  height: "100%",
+  width: "100%",
+  boxSizing: "border-box",
+  borderRadius: "1rem",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "space-between",
+  padding: ".2rem"
+}));
 
 function scrollToPreview() {
-  const el = document.getElementById('plate-preview')
+  const el = document.getElementById("plate-preview");
   if (el) {
-    el.scrollIntoView({ behavior: 'smooth' })
+    el.scrollIntoView({ behavior: "smooth" });
   }
 }
 </script>
