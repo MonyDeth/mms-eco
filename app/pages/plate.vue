@@ -32,16 +32,17 @@
         <div>
           <label for="number" class="block font-medium mb-1">លេខផ្លាក / Plate Number</label>
           <input
-            id="number"
-            v-model="plateNumber"
-            maxlength="6"
-            type="number"
-            inputmode="numeric"
-            pattern="[0-9]*"
-            class="w-full border border-gray-300 rounded-md px-4 py-2"
-            placeholder="លេខអំបោស"
-            />
-                    <p
+  id="number"
+  v-model="plateNumber"
+  maxlength="6"
+  type="text"
+  inputmode="numeric"
+  pattern="[0-9]*"
+  class="w-full border border-gray-300 rounded-md px-4 py-2"
+  placeholder="លេខអំបោស"
+  @input="onInput"
+/>
+                                    <p
           class="text-sm text-gray-500 mt-1"
         >លេខច្រើនបំផុត៦ខ្ទង់។ Max 6 Numeric Digits</p>
                     <p
@@ -54,7 +55,7 @@
           type="button"
           class="w-full bg-[#093E65] text-white font-semibold py-3 rounded-md hover:bg-[#0063AC]"
           @click="scrollToPreview"
-        >Preview Plate</button>
+        >រួចរាល់</button>
       </form>
     </div>
 
@@ -137,7 +138,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, watch } from "vue";
 import { provinces } from "@/data/provinces.js";
 
 const plateNumber = ref("");
@@ -188,4 +189,28 @@ function scrollToPreview() {
     el.scrollIntoView({ behavior: "smooth" });
   }
 }
+
+// Watch plateNumber and enforce max length 6
+watch(plateNumber, (newVal) => {
+  if (newVal.length > 6) {
+    plateNumber.value = newVal.slice(0, 6);
+  }
+});
+
+function onInput(event) {
+  let value = event.target.value;
+
+  // Remove all non-digit characters
+  value = value.replace(/\D/g, "");
+
+  // Limit to max 6 digits
+  if (value.length > 6) {
+    value = value.slice(0, 6);
+  }
+
+  plateNumber.value = value;
+  event.target.value = value;  // Keep input value in sync
+}
+
+
 </script>
