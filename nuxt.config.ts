@@ -11,9 +11,6 @@ export default defineNuxtConfig({
     plugins: [
       tailwindcss(), // enables Tailwind v4 in Vite
     ],
-        ssr: {
-      noExternal: ['jspdf', 'html2canvas']
-    }
   },
   app: {
     head: {
