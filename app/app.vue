@@ -11,7 +11,7 @@
           alt="Logo"
           class="w-40 mx-auto mb-4 flicker"
         />
-        <div class="text-xl font-bold py-4">ចាំតិច មេ...</div>
+        <div class="text-xl font-bold py-4">{{ currentMessage }}</div>
       </div>
     </div>
 
@@ -23,23 +23,41 @@
 </template>
 
 <script setup>
+import '~/assets/css/main.css'
 import { ref, nextTick, onMounted } from 'vue'
 import { gsap } from 'gsap'
+
 definePageMeta({
-  title: 'Your Page Title', // 🔁 Change this to your desired title
+  title: 'MMS Main',
 })
+
 const loader = ref(null)
 const loaderContent = ref(null)
 
+// Array of loading messages (in Khmer or mix, adjust as you like)
+const loadingMessages = [
+  'ចាំតិច មេ...',
+  'កំពុងផ្ទុកទិន្នន័យ...',
+  'សូមរង់ចាំសោះ...',
+  'កំពុងដំណើរការ...',
+  'សម្រាកបន្តិច...',
+  'កំពុងចាប់ផ្ដើម...',
+]
+
+// Randomly pick one message
+const currentMessage = ref('')
 
 onMounted(async () => {
+  // Pick random message on mount
+  currentMessage.value =
+    loadingMessages[Math.floor(Math.random() * loadingMessages.length)]
+
   await nextTick()
 
   requestAnimationFrame(() => {
     setTimeout(() => {
       const tl = gsap.timeline({
         onComplete: () => {
-          // Fully hide the loader to prevent scroll or interaction issues
           loader.value.style.display = 'none'
         },
       })
@@ -51,15 +69,20 @@ onMounted(async () => {
         ease: 'power2.inOut',
       })
 
-      tl.to(loader.value, {
-        opacity: 0,
-        duration: 0.2,
-        ease: 'power1.inOut',
-      }, '-=0.3') // overlap fade with scale
-    }, 1500)
+      tl.to(
+        loader.value,
+        {
+          opacity: 0,
+          duration: 0.2,
+          ease: 'power1.inOut',
+        },
+        '-=0.3'
+      )
+    }, 300)
   })
 })
 </script>
+
 
 <style scoped>
 .flicker {
