@@ -19,6 +19,10 @@ export default defineNuxtConfig({
       {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css2?family=Moul&family=Siemreap&family=DM+Serif+Text&display=swap&family=Oswald:wght@200..700&'
+      },
+       {
+        rel: 'stylesheet',
+        href: 'https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css'
       }
     ]
     },

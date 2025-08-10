@@ -11,14 +11,14 @@
           alt="Logo"
           class="w-40 mx-auto mb-4 flicker"
         />
-        <div class="text-xl font-bold py-4">{{ currentMessage }}</div>
+        <div class="text-xl font-siemreap py-4">{{ currentMessage }}</div>
       </div>
     </div>
 
-    <!-- Actual page content -->
-    <div>
+    <!-- Actual page content with built-in page transition -->
+    <PageTransition name="fade" mode="out-in">
       <NuxtPage />
-    </div>
+    </PageTransition>
   </div>
 </template>
 
@@ -34,21 +34,17 @@ definePageMeta({
 const loader = ref(null)
 const loaderContent = ref(null)
 
-// Array of loading messages (in Khmer or mix, adjust as you like)
 const loadingMessages = [
   'ចាំតិច មេ...',
-  'កំពុងផ្ទុកទិន្នន័យ...',
-  'សូមរង់ចាំសោះ...',
-  'កំពុងដំណើរការ...',
-  'សម្រាកបន្តិច...',
-  'កំពុងចាប់ផ្ដើម...',
+  'ពេលវេលា មិនគួរជួប...',
+  'ជីវិត គឺការរង់ចាំ...',
+  'អត់ឆាតមួយssហេរ?...',
+  'តក់ៗ ពេញបំពង់...'
 ]
 
-// Randomly pick one message
 const currentMessage = ref('')
 
 onMounted(async () => {
-  // Pick random message on mount
   currentMessage.value =
     loadingMessages[Math.floor(Math.random() * loadingMessages.length)]
 
@@ -78,11 +74,10 @@ onMounted(async () => {
         },
         '-=0.3'
       )
-    }, 300)
+    }, 1500)
   })
 })
 </script>
-
 
 <style scoped>
 .flicker {
@@ -92,5 +87,13 @@ onMounted(async () => {
 @keyframes flicker {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.6; }
+}
+
+/* Simple fade page transition */
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
 }
 </style>

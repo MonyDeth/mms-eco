@@ -35,10 +35,18 @@
             id="number"
             v-model="plateNumber"
             maxlength="6"
-            type="text"
+            type="number"
+            inputmode="numeric"
+            pattern="[0-9]*"
             class="w-full border border-gray-300 rounded-md px-4 py-2"
-            placeholder="Enter up to 6 characters"
-          />
+            placeholder="លេខអំបោស"
+            />
+                    <p
+          class="text-sm text-gray-500 mt-1"
+        >លេខច្រើនបំផុត៦ខ្ទង់។ Max 6 Numeric Digits</p>
+                    <p
+          class="text-sm text-gray-500 mt-1 pt-2"
+        >ទិន្នន័យរបស់អ្នកមិនត្រូវបានរក្សាទុកទេ។ Your data is not stored anywhere.</p>
         </div>
 
         <!-- Preview Button -->
@@ -79,7 +87,7 @@
               class="text-sm md:text-md font-siemreap font-bold text-sky-900 tracking-widest select-none text-left w-full"
               style="letter-spacing: -.03em; word-break: break-word;"
             >
-              ស្លាកលេខអំបោស Broom Number
+              លេខអំបោស Broom Number
             </div>
 
             <div
@@ -143,7 +151,7 @@ const outerStyle = {
   width: "100%",
   height: "100%",
   border: "1px solid gray",
-  borderRadius: ".75rem",
+  borderRadius: "1rem",
   boxSizing: "border-box",
   position: "relative"
 };
