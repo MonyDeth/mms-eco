@@ -51,64 +51,80 @@
     </div>
 
     <!-- Plate Preview -->
-    <div class="w-full md:w-1/2 flex justify-center items-center" :style="{ minHeight: '160px' }">
-      <div
-        id="plate-preview"
-        class="relative rounded-xl shadow-xl flex flex-col justify-center max-w-full"
-        :style="outerStyle"
-      >
-        <!-- Watermark background -->
-
-        <!-- White inner border -->
-        <div class="rounded-lg" :style="whiteBorderStyle">
-          <!-- Colored border + bg from province -->
-
-          <div
-            class="rounded-md flex flex-col items-start justify-between px-6 py-4"
-            :style="coloredBorderStyle"
-          >
-            <!-- Plate Number (top, full width) -->
-            <div class="space-y-1 p-2 md:p-4 flex item-start flex-col w-full">
-              <div
-                class="text-sm md:text-md font-siemreap font-bold text-sky-900 tracking-widest select-none text-left w-full"
-                style="letter-spacing: -.03em; word-break: break-word;"
-              >ស្លាកលេខអំបោស Broom Number</div>
-
-              <div
-                class="text-5xl md:text-6xl font-oswald font-bold text-sky-900 tracking-widest select-none truncate text-left w-full"
-                style="letter-spacing: -.03em; word-break: break-word;"
-              >MMS-{{ plateNumber || '000000' }}</div>
+    <!-- Plate Preview -->
+<div
+  class="w-full md:w-1/2 flex justify-center items-center"
+  style="min-height: 160px;"
+>
+  <div
+    id="plate-preview-wrapper"
+    class="relative max-w-full"
+    style="width: 100%; max-width: 640px; padding-bottom: 18.75%;"
+  >
+    <div
+      id="plate-preview"
+      class="absolute inset-0 rounded-xl shadow-xl flex flex-col justify-center max-w-full"
+      :style="outerStyle"
+    >
+      <!-- White inner border -->
+      <div class="rounded-lg" :style="whiteBorderStyle">
+        <!-- Colored border + bg from province -->
+        <div
+          class="rounded-md flex flex-col items-start justify-between px-6 py-4"
+          :style="coloredBorderStyle"
+        >
+          <!-- Plate Number (top, full width) -->
+          <div class="space-y-1 p-2 md:p-4 flex flex-col w-full">
+            <div
+              class="text-sm md:text-md font-siemreap font-bold text-sky-900 tracking-widest select-none text-left w-full"
+              style="letter-spacing: -.03em; word-break: break-word;"
+            >
+              ស្លាកលេខអំបោស Broom Number
             </div>
 
-            <!-- Bottom row: logo left, province right -->
-            <div class="flex w-full justify-between p-2 items-center mt-4">
-              <img src="/images/logo.png" alt="MMS Logo" class="h-12 md:h-14 object-contain" />
+            <div
+              class="text-5xl md:text-6xl font-oswald font-bold text-sky-900 tracking-widest select-none truncate text-left w-full"
+              style="letter-spacing: -.03em; word-break: break-word;"
+            >
+              MMS-{{ plateNumber || '000000' }}
+            </div>
+          </div>
 
-              <div class="text-right">
-                <div
-                  class="text-sky-800 font-siemreap text-base md:text-xl font-semibold whitespace-nowrap"
-                  style="max-width: 120px;"
-                >{{ province.name_kh || 'ខេត្ត' }}</div>
-                <div
-                  class="text-red-600 text-sm font-dm-serif md:text-lg whitespace-nowrap"
-                  style="max-width: 120px;"
-                >{{ province.name || 'Province' }}</div>
-                <div
-                  class="absolute inset-0 pointer-events-none"
-                  style="
-                        background-image: url('/images/platebg.png');
-                        background-repeat: no-repeat;
-                        background-position: center;
-                        background-size: cover;
-                        opacity: 1;
-                        "
-                ></div>
+          <!-- Bottom row: logo left, province right -->
+          <div class="flex w-full justify-between p-2 items-center mt-4">
+            <img src="/images/logo.png" alt="MMS Logo" class="h-12 md:h-14 object-contain" />
+
+            <div class="text-right">
+              <div
+                class="text-sky-800 font-siemreap text-base md:text-xl font-semibold whitespace-nowrap"
+                style="max-width: 120px;"
+              >
+                {{ province.name_kh || 'ខេត្ត' }}
               </div>
+              <div
+                class="text-red-600 text-sm font-dm-serif md:text-lg whitespace-nowrap"
+                style="max-width: 120px;"
+              >
+                {{ province.name || 'Province' }}
+              </div>
+              <div
+                class="absolute inset-0 pointer-events-none"
+                style="
+                  background-image: url('/images/platebg.png');
+                  background-repeat: no-repeat;
+                  background-position: center;
+                  background-size: cover;
+                  opacity: 1;
+                "
+              ></div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+</div>
+
   </div>
 </template>
 
@@ -125,11 +141,11 @@ const province = ref(defaultProvince);
 // Outer black border, responsive width (full on mobile, max 640px on desktop)
 const outerStyle = {
   width: "100%",
-  maxWidth: "640px",
-  height: "320px",
+  height: "100%",
   border: "1px solid gray",
   borderRadius: ".75rem",
-  boxSizing: "border-box"
+  boxSizing: "border-box",
+  position: "relative"
 };
 
 // White border inside outer black border
