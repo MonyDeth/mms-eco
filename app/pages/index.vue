@@ -24,7 +24,7 @@
   <section class="bg-white/20 bg-opacity-50 rounded-xl p-6 md:col-span-1">
     <!-- Menu Header -->
     <h2 class="text-xl font-moul text-white mb-6 text-center sm:text-left">
-      សេវាកម្មវេទមន្តឌីជីថល
+      ថ្នាលសេវាកម្មវេទមន្តឌីជីថល
     </h2>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-8">
@@ -64,7 +64,7 @@
 
       <!-- Certification (disabled) spans two columns -->
       <div
-        class="relative bg-gray-300 text-gray-500 rounded-xl px-8 py-4 font-semibold flex flex-col items-center cursor-not-allowed select-none col-span-1 sm:col-span-2"
+        class="relative bg-gray-300 text-gray-500 rounded-xl px-8 py-4 font-semibold flex flex-col items-center cursor-not-allowed select-none col-span-1 sm:col-span-1"
         title="Coming Soon"
       >
         <div
@@ -72,12 +72,31 @@
         >
           <img src="/images/svg/certificate-icon.svg" alt="ID Icon" class="w-24 h-24" />
         </div>
-        <span>វិញាបណ្ណបត្រ</span>
+        <span>វិញ្ញាបនបត្រ</span>
         <span
-          class="absolute -top-2 -right-2 bg-gray-400 text-white text-xs font-bold rounded-full px-2 py-0.5 select-none"
-        >Coming Soon</span>
+          class="absolute -top-2 -right-2 bg-gray-400 text-white text-md font-bold rounded-full px-4 py-1 select-none"
+        >ឆាប់ៗនេះ</span>
       </div>
+      <!-- Wizard (disabled) -->
+<div
+  class="relative bg-gray-300 text-gray-500 rounded-xl px-8 py-4 font-semibold flex flex-col items-center cursor-not-allowed select-none col-span-1 sm:col-span-1"
+  title="Coming Soon"
+>
+  <div
+    class="flex items-center justify-center bg-[#646A6E] rounded-xl p-4 w-28 h-28 mb-2"
+  >
+    <img src="/images/svg/wizard-icon.svg" alt="Wizard Icon" class="w-24 h-24" />
+  </div>
+  <span>ហ្គេមធ្មប់</span>
+<span
+  class="absolute -top-2 -right-2 bg-gray-400 text-white text-md font-bold rounded-full px-4 py-1 flex items-center gap-1 select-none"
+>
+កំពុងអភិវឌ្ឍ
+</span>
+</div>
     </div>
+
+    
   </section>
 </main>
 
@@ -91,12 +110,12 @@
           rel="noopener"
           class="text-white"
         >
-          <i class="ri-facebook-circle-fill text-xl"></i> Official Facebook Page
+          <i class="ri-facebook-circle-fill text-xl"></i> Facebook Page
         </a>
       </p>
      <p class="mt-2 max-w-xl text-gray-400 mx-auto pb-12">
-  <i class="ri-error-warning-fill text-xl"></i> យើងគ្រប់គ្រងតែទំព័រហ្វេសប៊ុកផ្លូវការតែ <strong>មួយប៉ុណ្ណោះ</strong> ។
-  <br /><i class="ri-prohibited-2-fill text-xl"></i>យើង​<strong>មិនទទួលខុសត្រូវ</strong> លើសកម្មភាពដែរមិនមែនចេញពីហ្វេសប៊ុកផ្លូវការរបស់យើងទេ។
+  <i class="ri-error-warning-fill text-xl"></i> យើងគ្រប់គ្រងតែផេកហ្វេសប៊ុក <strong>មួយប៉ុណ្ណោះ</strong> មិនមានTikTok Instagram ឬផេកផ្សេងទៀតទេ។
+  <br /><i class="ri-prohibited-2-fill text-xl"></i>យើង​<strong>មិនទទួលខុសត្រូវ</strong> លើសកម្មភាពដែរធ្វើរដោយជនទីបីនោះទេ។
   <br /><i class="ri-hearts-fill text-xl"></i>ពួកយើង មិនទទួលបានប្រាក់ចំណេញ ឬចំណូលអ្វីឡើយ។
 </p>
     </footer>
