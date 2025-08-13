@@ -12,18 +12,18 @@
       </div>  
     <!-- Landing Section -->
     <main
-  class="flex-grow bg-[#093E65] text-white px-6 py-16 max-w-full grid grid-cols-1 md:grid-cols-2 gap-12"
+  class="flex-grow bg-[#093E65] text-white px-6 py-4 md:py-18 max-w-full grid grid-cols-1 md:grid-cols-2 gap-12"
 >
   <!-- Welcome message -->
   <section
     class="flex flex-col justify-center text-center md:text-left max-w-xs mx-auto md:mx-0"
   >
-    <h1 class="text-4xl font-moul mb-4">សូមស្វាគមន៍</h1>
-    <p>ទំនើបកម្មនៃប្រព័ន្ធគ្រប់គ្រងធ្មប់ និងសម្គាល់ខ្លួនបុគ្គលិកវេទមន្ត</p>
+    <h1 class="text-xl md:text-4xl font-moul mb-4">សូមស្វាគមន៍</h1>
+    <p class="text-md font-base md:text-xl">ទំនើបកម្មនៃប្រព័ន្ធគ្រប់គ្រងធ្មប់ និងសម្គាល់ខ្លួនបុគ្គលិកវេទមន្ត</p>
   </section>
 
   <!-- Services with semi-transparent white bg container spanning 2 columns -->
-  <section class="bg-white/20 bg-opacity-50 rounded-xl p-6 md:col-span-1 col-span-1">
+  <section class="bg-white/20 bg-opacity-50 rounded-xl p-6  md:col-span-1 col-span-1">
     <!-- Menu Header -->
     <h2 class="text-xl font-moul text-white mb-6 text-center sm:text-left">
       ថ្នាលសេវាកម្មវេទមន្តឌីជីថល

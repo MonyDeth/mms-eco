@@ -91,20 +91,20 @@
               style="background: linear-gradient(45deg, #0D5278, #1898DE);"
             >
               <!-- Plate Number -->
-              <div class="space-y-1 p-2 md:p-2 flex flex-col w-full">
+              <div class=" p-1 md:p-2 flex flex-col w-full">
                 <div
                   class="text-sm md:text-md font-siemreap font-bold text-white tracking-widest select-none text-left w-full"
                 >លេខអំបោស Broom Number</div>
                 <div
-                  class="text-5xl md:text-6xl font-oswald font-bold text-white select-none text-left w-full"
+                  class="text-3xl md:text-6xl text-shadow-md font-oswald font-bold text-white select-none text-left w-full"
                 >MMS-{{ plateNumber || '000000' }}</div>
               </div>
 
               <!-- Top: Owner Name & Image -->
-              <div class="flex items-center p-2 w-full">
+              <div class="flex items-center p-1 md:p-2 w-full">
                 <div class="flex-1 text-left">
-                  <p class="text-sm text-white mt-1 pt-2">ម្ចាស់អំបោស Broom's Owner.</p>
-                  <div class="text-lg font-semibold text-white">{{ ownerName || 'ឈ្មោះម្ចាស់' }}</div>
+                  <p class="text-sm md:text-sm text-white mt-1 pt-2">ម្ចាស់អំបោស Broom's Owner.</p>
+                  <div class="text-md md:text-xl font-semibold text-white">{{ ownerName || 'ឈ្មោះម្ចាស់' }}</div>
                 </div>
                 <div
                   class="w-20 h-20 rounded-xl overflow-hidden border-2 border-sky-800 flex-shrink-0 bg-gray-200 flex items-center justify-center text-gray-500"
@@ -125,7 +125,7 @@
                   background-repeat: no-repeat;
                   background-position: center;
                   background-size: cover;
-                  opacity: 1;
+                  opacity: .25;
                 "
               ></div>
             </div>
