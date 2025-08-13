@@ -29,7 +29,7 @@
       ថ្នាលសេវាកម្មវេទមន្តឌីជីថល
     </h2>
 
-    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-8">
       <!-- Work ID -->
       <router-link
         to="/card"
