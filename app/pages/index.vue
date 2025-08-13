@@ -3,11 +3,13 @@
     <!-- Header -->
     <header class="bg-white shadow-md px-6 py-4 flex items-center justify-between max-w-full">
       <img src="/images/logo_long_black.png" alt="MMS Logo" class="h-14 object-contain" />
-      <div class="text-right text-sm">
-        <p class="font-semibold">មិនមែនស្ថាប័នពិតប្រាកដ, Parody Institute</p>
-      </div>
+      
     </header>
-
+<div class="text-right text-sm p-4">
+        <p class="font-semibold">
+          <i class="ri-error-warning-line text-xl text-yellow-400"></i>
+          មិនមែនស្ថាប័នពិតប្រាកដ, Parody Institute</p>
+      </div>  
     <!-- Landing Section -->
     <main
   class="flex-grow bg-[#093E65] text-white px-6 py-16 max-w-full grid grid-cols-1 md:grid-cols-2 gap-12"
@@ -21,20 +23,20 @@
   </section>
 
   <!-- Services with semi-transparent white bg container spanning 2 columns -->
-  <section class="bg-white/20 bg-opacity-50 rounded-xl p-6 md:col-span-1">
+  <section class="bg-white/20 bg-opacity-50 rounded-xl p-6 md:col-span-1 col-span-1">
     <!-- Menu Header -->
     <h2 class="text-xl font-moul text-white mb-6 text-center sm:text-left">
       ថ្នាលសេវាកម្មវេទមន្តឌីជីថល
     </h2>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-8">
+    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-8">
       <!-- Work ID -->
       <router-link
         to="/card"
         class="bg-white text-[#093E65] rounded-xl px-8 py-4 font-semibold flex flex-col items-center shadow-md hover:shadow-lg hover:bg-gray-200 hover:-translate-y-1 transition-transform"
       >
         <div
-          class="flex items-center justify-center bg-[#093E65] rounded-xl p-4 w-28 h-28 mb-2"
+          class="flex items-center justify-center bg-[#093E65] rounded-xl px-2 py-2 md:px-4 md:py-4 w-20 h-20 md:w-28 md:h-28 mb-1"
         >
           <img src="/images/svg/id-icon.svg" alt="ID Icon" class="w-24 h-24" />
         </div>
@@ -47,7 +49,7 @@
   class="relative bg-white text-[#093E65] rounded-xl px-8 py-4 font-semibold flex flex-col items-center shadow-md hover:shadow-lg hover:-translate-y-1 hover:bg-gray-200 transition-transform"
 >
   <div
-    class="flex items-center justify-center bg-[#093E65] rounded-xl p-4 w-28 h-28 mb-2"
+    class="flex items-center justify-center bg-[#093E65] rounded-xl px-2 py-2 md:px-4 md:py-4 w-20 h-20 md:w-28 md:h-28 mb-1"
   >
     <img src="/images/svg/broom-icon.svg" alt="Broom Icon" class="w-24 h-24" />
   </div>
@@ -68,7 +70,7 @@
         title="Coming Soon"
       >
         <div
-          class="flex items-center justify-center bg-[#646A6E] rounded-xl p-4 w-28 h-28 mb-2"
+          class="flex items-center justify-center bg-[#646A6E] rounded-xl px-2 py-2 md:px-4 md:py-4 w-20 h-20 md:w-28 md:h-28 mb-1"
         >
           <img src="/images/svg/certificate-icon.svg" alt="ID Icon" class="w-24 h-24" />
         </div>
@@ -83,7 +85,7 @@
   title="Coming Soon"
 >
   <div
-    class="flex items-center justify-center bg-[#646A6E] rounded-xl p-4 w-28 h-28 mb-2"
+    class="flex items-center justify-center bg-[#646A6E] rounded-xl px-2 py-2 md:px-4 md:py-4 w-20 h-20 md:w-28 md:h-28 mb-1"
   >
     <img src="/images/svg/wizard-icon.svg" alt="Wizard Icon" class="w-24 h-24" />
   </div>
