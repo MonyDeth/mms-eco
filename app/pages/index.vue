@@ -1,15 +1,18 @@
 <template>
 <div class="min-h-screen flex flex-col bg-gradient-to-br from-[#09203F] to-[#1A4C8B]">
     
-    <header class="sticky top-0 z-50 bg-white/10 backdrop-blur-md justify-between shadow-md px-6 py-3 flex items-center justify-between">
-      <img src="/images/logo_long_white.png" alt="MMS Logo" class="h-18 object-contain" />\
-       <div class="text-right text-sm p-4 text-gray-300">
-      <p class="font-base">
-        <i class="ri-error-warning-line text-xl align-middle"></i>
-        មិនមែនស្ថាប័នពិតប្រាកដ, Parody Institute
-      </p>
-    </div>
-    </header>
+<header
+  v-show="isLoaded"
+  class="sticky top-0 z-1 bg-white/10 backdrop-blur-md flex items-center justify-between px-4 sm:px-6 py-2 sm:py-3 shadow-md transition-all duration-500"
+>
+  <img src="/images/logo_long_white.png" alt="MMS Logo" class="h-10 sm:h-18 object-contain" />
+  <div class="text-right text-xs sm:text-sm text-gray-300">
+    <p class="sm:font-base font-sl flex items-center gap-1">
+      <i class="ri-error-warning-line text-lg sm:text-xl align-middle"></i>
+      មិនមែនស្ថាប័នពិតប្រាកដ, Parody Institute
+    </p>
+  </div>
+</header>
 
    
 
@@ -127,4 +130,14 @@
 
 <script setup>
 import { Strong } from "gsap";
+
+
+const isLoaded = ref(false);
+
+onMounted(() => {
+  // Wait for the next tick to show header
+  requestAnimationFrame(() => {
+    isLoaded.value = true;
+  });
+});
 </script>

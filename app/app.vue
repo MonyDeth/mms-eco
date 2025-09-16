@@ -3,7 +3,7 @@
     <!-- Loading screen -->
     <div
       ref="loader"
-      class="fixed inset-0 z-50 flex items-center justify-center bg-[#093E65]"
+      class="fixed inset-0 z-[999]  flex items-center justify-center bg-[#093E65]"
     >
       <div ref="loaderContent" class="text-center text-white">
         <img
@@ -33,6 +33,7 @@ definePageMeta({
 
 const loader = ref(null)
 const loaderContent = ref(null)
+const isLoaded = ref(false) // <-- add this
 
 const loadingMessages = [
   'ចាំតិច មេ...'
