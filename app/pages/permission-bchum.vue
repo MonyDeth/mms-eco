@@ -53,61 +53,62 @@
     </select>
   </div>
 
-        <div class="grid grid-cols-2 gap-4">
-          <!-- From Date -->
-          <div>
-            <label class="block font-medium mb-1">ពីថ្ងៃ</label>
-            <div class="grid grid-cols-3 gap-2">
-              <input
-                v-model.number="fromDay"
-                type="number"
-                min="1"
-                max="31"
-                class="w-full border border-gray-200 rounded-md px-2 py-1 shadow-sm focus:ring-2 focus:ring-white"
-              />
-              <select
-                v-model.number="fromMonth"
-                class="w-full border border-gray-200 rounded-md px-2 py-1 shadow-sm focus:ring-2 focus:ring-white"
-              >
-                <option v-for="m in months" :key="m.id" :value="m.id" class="text-black">{{ m.name }}</option>
-              </select>
-              <input
-                v-model.number="fromYear"
-                type="number"
-                min="1900"
-                max="2100"
-                class="w-full border border-gray-200 rounded-md px-2 py-1 shadow-sm focus:ring-2 focus:ring-white"
-              />
-            </div>
-          </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+  <!-- From Date -->
+  <div>
+    <label class="block font-medium mb-1">ពីថ្ងៃ</label>
+    <div class="grid grid-cols-3 gap-2">
+      <input
+        v-model.number="fromDay"
+        type="number"
+        min="1"
+        max="31"
+        class="w-full border border-gray-200 rounded-md px-2 py-1 shadow-sm focus:ring-2 focus:ring-white"
+      />
+      <select
+        v-model.number="fromMonth"
+        class="w-full border border-gray-200 rounded-md px-2 py-1 shadow-sm focus:ring-2 focus:ring-white"
+      >
+        <option v-for="m in months" :key="m.id" :value="m.id" class="text-black">{{ m.name }}</option>
+      </select>
+      <input
+        v-model.number="fromYear"
+        type="number"
+        min="1900"
+        max="2100"
+        class="w-full border border-gray-200 rounded-md px-2 py-1 shadow-sm focus:ring-2 focus:ring-white"
+      />
+    </div>
+  </div>
 
-          <!-- To Date -->
-          <div>
-            <label class="block font-medium mb-1">ដល់ថ្ងៃ</label>
-            <div class="grid grid-cols-3 gap-2">
-              <input
-                v-model.number="toDay"
-                type="number"
-                min="1"
-                max="31"
-                class="w-full border border-gray-200 rounded-md px-2 py-1 shadow-sm focus:ring-2 focus:ring-white"
-              />
-              <select
-                v-model.number="toMonth"
-                class="w-full border border-gray-200 rounded-md px-2 py-1 shadow-sm focus:ring-2 focus:ring-white"
-              >
-                <option v-for="m in months" :key="m.id" :value="m.id" class="text-black">{{ m.name }}</option>
-              </select>
-              <input
-                v-model.number="toYear"
-                type="number"
-                min="1900"
-                max="2100"
-                class="w-full border border-gray-200 rounded-md px-2 py-1 shadow-sm focus:ring-2 focus:ring-white"
-              />
-            </div>
-          </div>
-        </div>
+  <!-- To Date -->
+  <div>
+    <label class="block font-medium mb-1">ដល់ថ្ងៃ</label>
+    <div class="grid grid-cols-3 gap-2">
+      <input
+        v-model.number="toDay"
+        type="number"
+        min="1"
+        max="31"
+        class="w-full border border-gray-200 rounded-md px-2 py-1 shadow-sm focus:ring-2 focus:ring-white"
+      />
+      <select
+        v-model.number="toMonth"
+        class="w-full border border-gray-200 rounded-md px-2 py-1 shadow-sm focus:ring-2 focus:ring-white"
+      >
+        <option v-for="m in months" :key="m.id" :value="m.id" class="text-black">{{ m.name }}</option>
+      </select>
+      <input
+        v-model.number="toYear"
+        type="number"
+        min="1900"
+        max="2100"
+        class="w-full border border-gray-200 rounded-md px-2 py-1 shadow-sm focus:ring-2 focus:ring-white"
+      />
+    </div>
+  </div>
+</div>
+
 
         <!-- Reason -->
         <div>
@@ -159,7 +160,7 @@
         <div
           class="bg-gradient-to-t from-[#fff] to-[#87D8FF] text-white h-20 flex items-center justify-center"
         >
-          <img src="/images/logo_long_black.png" alt="Logo" class="h-14 object-contain" />
+          <img src="/images/logo_long_black.png" alt="Logo" class="sm:h-14 h-12 p-1 object-contain" />
         </div>
 
         <!-- Slip content -->
@@ -227,7 +228,7 @@
           </div>
 
           <div class="mt-auto pt-6">
-            <p class="text-sm text-gray-500">កាលបរិច្ឆេត: {{ today2 }}</p>
+            <p class="text-sm text-gray-500">កាលបរិច្ឆេទ: {{ today2 }}</p>
           </div>
         </div>
       </div>
