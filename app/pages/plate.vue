@@ -1,6 +1,6 @@
 <template>
   <div
-    class="min-h-screen flex flex-col md:flex-row p-4 md:p-6 gap-6 bg-gray-100 overflow-x-hidden font-siemreap"
+    class="min-h-screen flex flex-col md:flex-row p-4 md:p-6 gap-6 bg-gradient-to-br from-[#09203F] to-[#1A4C8B] overflow-x-hidden font-siemreap"
   >
     <!-- Form -->
     <div class="w-full md:w-1/2">
@@ -8,13 +8,13 @@
         <NuxtLink to="/">
           <img src="/images/logo.png" alt="MMS Logo" class="w-16 sm:w-20 rounded-full object-cover" />
         </NuxtLink>
-        <div class="text-[#093E65]">
+        <div class="text-white">
           <h2 class="text-xl sm:text-2xl font-base">ចុះបញ្ជីលេខអំបោស</h2>
           <h2 class="text-lg sm:text-2xl font-dm-serif">Broom Plate Number</h2>
         </div>
       </div>
 
-      <form class="space-y-6 p-4 border border-gray-200 rounded-2xl shadow-md bg-white">
+      <form class="space-y-6 p-4 border border-gray-200 rounded-2xl shadow-md bg-white/10 text-white">
         <!-- Owner Name -->
         <div>
           <label for="ownerName" class="block font-medium mb-1">ឈ្មោះម្ចាស់ / Owner Name</label>
@@ -41,7 +41,7 @@
             placeholder="លេខអំបោស"
             @input="onInput"
           />
-          <p class="text-sm text-gray-500 mt-1">លេខច្រើនបំផុត៦ខ្ទង់។ Max 6 Numeric Digits</p>
+          <p class="text-sm text-white mt-1">លេខច្រើនបំផុត៦ខ្ទង់។ Max 6 Numeric Digits</p>
         </div>
 
         <!-- Upload Image -->
@@ -61,12 +61,12 @@
           </label>
         </div>
         <p
-          class="text-sm text-gray-500 mt-1 pt-2"
+          class="text-sm text-white mt-1 pt-2"
         >ទិន្នន័យរបស់អ្នកមិនត្រូវបានរក្សាទុកទេ។ Your data is not stored anywhere.</p>
         <!-- Preview Button -->
         <button
           type="button"
-          class="w-full bg-[#093E65] text-white font-semibold py-3 rounded-md hover:bg-[#0063AC]"
+          class="w-full text-[#093E65] bg-white font-semibold py-3 rounded-md hover:bg-gray-200 transition"
           @click="scrollToPreview"
         >រួចរាល់</button>
       </form>
@@ -81,7 +81,7 @@
       >
         <div
           id="plate-preview"
-          class="absolute inset-0 rounded-xl shadow-xl flex flex-col justify-center max-w-full"
+          class="absolute inset-0 rounded-xl shadow-xl bg-white flex flex-col justify-center max-w-full"
           :style="outerStyle"
         >
           <div class="rounded-lg" :style="whiteBorderStyle">

@@ -18,7 +18,7 @@ export default defineNuxtConfig({
        link: [
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Moul&family=Siemreap&family=DM+Serif+Text&display=swap&family=Oswald:wght@200..700&'
+        href: 'https://fonts.googleapis.com/css2?family=Moul&family=Kantumruy+Pro&family=DM+Serif+Text&display=swap&family=Oswald:wght@200..700&'
       },
        {
         rel: 'stylesheet',

@@ -1,18 +1,18 @@
 <template>
-  <div class="min-h-screen flex flex-col md:flex-row p-4 md:p-6 gap-6 bg-gray-50 overflow-x-hidden">
+  <div class="min-h-screen flex flex-col md:flex-row p-4 md:p-6 gap-6 bg-gradient-to-br from-[#09203F] to-[#1A4C8B] overflow-x-hidden">
     <!-- Edit Form -->
     <div class="order-1 md:order-none w-full md:w-1/2">
       <div class="flex items-center gap-4 mb-6">
         <NuxtLink to="/">
           <img src="/images/logo.png" alt="MMS Logo" class="w-16 sm:w-20 rounded-full object-cover" />
         </NuxtLink>
-        <div class="text-[#093E65]">
+        <div class="text-white">
           <h2 class="text-base sm:text-2xl">បំពេញពាក្យឈប់សម្រាក</h2>
           <h2 class="text-base sm:text-2xl font-dm-serif">Permission Slip</h2>
         </div>
       </div>
 
-      <form @submit.prevent class="space-y-6 p-4 border border-gray-200 rounded-2xl shadow-md">
+      <form @submit.prevent class="space-y-6 p-4 border border-gray-200 bg-white/10 text-white rounded-2xl shadow-md">
         <!-- Name -->
         <div>
           <label for="name" class="block font-medium mb-1">ឈ្មោះ</label>
@@ -20,7 +20,7 @@
             id="name"
             v-model="name"
             type="text"
-            class="w-full border border-gray-200 bg-white rounded-md px-4 py-1 shadow-sm focus:ring-2 focus:ring-blue-900"
+            class="w-full border border-gray-200 rounded-md px-4 py-1 shadow-sm focus:ring-2 focus:ring-white"
             placeholder="បញ្ចូលឈ្មោះពេញ"
             required
           />
@@ -33,7 +33,7 @@
             id="position"
             v-model="position"
             type="text"
-            class="w-full border border-gray-200 bg-white rounded-md px-4 py-1 shadow-sm focus:ring-2 focus:ring-blue-900"
+            class="w-full border border-gray-200 rounded-md px-4 py-1 shadow-sm focus:ring-2 focus:ring-white"
             placeholder="បញ្ចូលមុខដំណែង"
             required
           />
@@ -45,11 +45,11 @@
     <select
       id="department"
       v-model="department"
-      class="w-full border border-gray-200 bg-white rounded-md px-4 py-1 shadow-sm focus:ring-2 focus:ring-blue-900"
+      class="w-full border border-gray-200 rounded-md px-4 py-1 shadow-sm focus:ring-2 focus:ring-white"
       required
     >
       <option disabled value="">ជ្រើសរើសអគ្គនាយកដ្ឋាន នាយកដ្ឋាន</option>
-      <option v-for="dep in departments" :key="dep" :value="dep">{{ dep }}</option>
+      <option v-for="dep in departments" :key="dep" :value="dep" class="text-black">{{ dep }}</option>
     </select>
   </div>
 
@@ -63,20 +63,20 @@
                 type="number"
                 min="1"
                 max="31"
-                class="w-full border border-gray-200 bg-white rounded-md px-2 py-1 shadow-sm focus:ring-2 focus:ring-blue-900"
+                class="w-full border border-gray-200 rounded-md px-2 py-1 shadow-sm focus:ring-2 focus:ring-white"
               />
               <select
                 v-model.number="fromMonth"
-                class="w-full border border-gray-200 bg-white rounded-md px-2 py-1 shadow-sm focus:ring-2 focus:ring-blue-900"
+                class="w-full border border-gray-200 rounded-md px-2 py-1 shadow-sm focus:ring-2 focus:ring-white"
               >
-                <option v-for="m in months" :key="m.id" :value="m.id">{{ m.name }}</option>
+                <option v-for="m in months" :key="m.id" :value="m.id" class="text-black">{{ m.name }}</option>
               </select>
               <input
                 v-model.number="fromYear"
                 type="number"
                 min="1900"
                 max="2100"
-                class="w-full border border-gray-200 bg-white rounded-md px-2 py-1 shadow-sm focus:ring-2 focus:ring-blue-900"
+                class="w-full border border-gray-200 rounded-md px-2 py-1 shadow-sm focus:ring-2 focus:ring-white"
               />
             </div>
           </div>
@@ -90,20 +90,20 @@
                 type="number"
                 min="1"
                 max="31"
-                class="w-full border border-gray-200 bg-white rounded-md px-2 py-1 shadow-sm focus:ring-2 focus:ring-blue-900"
+                class="w-full border border-gray-200 rounded-md px-2 py-1 shadow-sm focus:ring-2 focus:ring-white"
               />
               <select
                 v-model.number="toMonth"
-                class="w-full border border-gray-200 bg-white rounded-md px-2 py-1 shadow-sm focus:ring-2 focus:ring-blue-900"
+                class="w-full border border-gray-200 rounded-md px-2 py-1 shadow-sm focus:ring-2 focus:ring-white"
               >
-                <option v-for="m in months" :key="m.id" :value="m.id">{{ m.name }}</option>
+                <option v-for="m in months" :key="m.id" :value="m.id" class="text-black">{{ m.name }}</option>
               </select>
               <input
                 v-model.number="toYear"
                 type="number"
                 min="1900"
                 max="2100"
-                class="w-full border border-gray-200 bg-white rounded-md px-2 py-1 shadow-sm focus:ring-2 focus:ring-blue-900"
+                class="w-full border border-gray-200 rounded-md px-2 py-1 shadow-sm focus:ring-2 focus:ring-white"
               />
             </div>
           </div>
@@ -116,7 +116,7 @@
             id="reason"
             v-model="reason"
             rows="3"
-            class="w-full border border-gray-200 bg-white rounded-md px-4 py-1 shadow-sm focus:ring-2 focus:ring-blue-900"
+            class="w-full border border-gray-200 rounded-md px-4 py-1 shadow-sm focus:ring-2 focus:ring-white"
             placeholder="សូមបញ្ជាក់មូលហេតុ..."
           ></textarea>
         </div>
@@ -137,12 +137,12 @@
         </div>
 
         <p
-          class="text-sm text-gray-500"
+          class="text-sm text-white/75"
         >ទិន្នន័យរបស់អ្នកមិនត្រូវបានរក្សាទុកទេ។ Your data is not stored anywhere.</p>
 
         <button
           type="button"
-          class="w-full bg-[#093E65] text-white font-semibold py-3 rounded-md hover:bg-[#0063AC] transition"
+          class="w-full text-[#093E65] bg-white font-semibold py-3 rounded-md hover:bg-gray-200 transition"
           onclick="document.getElementById('slip-to-download').scrollIntoView({ behavior: 'smooth' });"
         >រួចរាល់</button>
       </form>
@@ -241,7 +241,7 @@ import months from "@/data/months.json";
 
 // Khmer numerals
 function toKhmerNumber(num) {
-  return new Intl.NumberFormat("km-KH").format(num);
+  return new Intl.NumberFormat("km-KH", { useGrouping: false }).format(num);
 }
 
 const reason = ref("");

@@ -35,13 +35,15 @@ const loader = ref(null)
 const loaderContent = ref(null)
 
 const loadingMessages = [
-  'ចាំតិច មេ...',
-  'ពេលវេលា មិនគួរជួប...',
-  'ជីវិត គឺការរង់ចាំ...',
-  'អត់ឆាតមួយssហេរ?...',
-  'តក់ៗ ពេញបំពង់...'
+  'ចាំតិច មេ...'
 ]
-
+// const loadingMessages = [
+//   'ចាំតិច មេ...',
+//   'ពេលវេលា មិនគួរជួប...',
+//   'ជីវិត គឺការរង់ចាំ...',
+//   'អត់ឆាតមួយssហេរ?...',
+//   'តក់ៗ ពេញបំពង់...'
+// ]
 const currentMessage = ref('')
 
 onMounted(async () => {

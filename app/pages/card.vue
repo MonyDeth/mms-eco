@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen flex flex-col md:flex-row p-4 md:p-6 gap-6 bg-gray-50 overflow-x-hidden">
+  <div class="min-h-screen flex flex-col md:flex-row p-4 md:p-6 gap-6 bg-gradient-to-br from-[#09203F] to-[#1A4C8B] overflow-x-hidden">
     <!-- Preview -->
 
     <!-- Edit Form (same as before) -->
@@ -8,7 +8,7 @@
         <NuxtLink to="/">
             <img src="/images/logo.png" alt="MMS Logo" class="w-16 sm:w-20 rounded-full object-cover" />
         </NuxtLink>        
-        <div class="text-[#093E65]">
+        <div class="text-white">
           <h2 class="text-base sm:text-2xl">បំពេញព័ត៌មានកាតមន្ត្រី</h2>
           <h2 class="text-base sm:text-2xl font-dm-serif">Officer Card Information</h2>
         </div>
@@ -16,7 +16,7 @@
 
       <form
         @submit.prevent="submitForm"
-        class="space-y-6 p-4 border border-gray-200 rounded-2xl shadow-md"
+        class="space-y-6 p-4 border border-gray-200 bg-white/10 text-white rounded-2xl shadow-md"
       >
         <div>
           <label for="name" class="block font-medium mb-1">ឈ្មោះ</label>
@@ -24,13 +24,13 @@
             id="name"
             v-model="name"
             type="text"
-            class="w-full border border-gray-200 bg-white rounded-md px-4 py-1 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent"
+            class="w-full border border-gray-200 rounded-md px-4 py-1 shadow-sm focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent"
             placeholder="បញ្ចូលឈ្មោះពេញ"
             required
           />
-          <p class="text-sm text-gray-500 mt-1">ដាក់បានភាសាតែមួយប៉ុណ្ណោះ (ខ្មែរ ឬ អង់គ្លេស)</p>
+          <p class="text-sm text-white/75 mt-1">ដាក់បានភាសាតែមួយប៉ុណ្ណោះ (ខ្មែរ ឬ អង់គ្លេស)</p>
           <p
-            class="text-sm text-gray-500 mt-1"
+            class="text-sm text-white/75 mt-1"
           >Support only one language at a time (Khmer or English)</p>
         </div>
 
@@ -40,12 +40,12 @@
             id="position"
             v-model="position"
             type="text"
-            class="w-full border border-gray-200 bg-white rounded-md px-4 py-1 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent"
+            class="w-full border border-gray-200 rounded-md px-4 py-1 shadow-sm focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent"
             placeholder="បញ្ចូលមុខដំណែង"
             required
           />
                   <p
-          class="text-sm text-gray-500 mt-1"
+          class="text-sm text-white/75 mt-1"
         >មន្ត្រី...</p>
         </div>
 
@@ -54,15 +54,15 @@
           <select
             id="department"
             v-model="department"
-            class="w-full border border-gray-200 bg-white rounded-md px-4 py-1 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent"
+            class="w-full border border-gray-200 rounded-md px-4 py-1 shadow-sm focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent"
             required
           >
-            <option disabled value>ជ្រើសរើសអគ្គនាយកដ្ឋាន នាយកដ្ឋាន</option>
-            <option>អគ្គនាយកដ្ឋាន ទស្សន៍ទាយ និងបង្ការគ្រោះ</option>
-            <option>អគ្គនាយកដ្ឋាន វត្ថុទិព</option>
-            <option>នាយកដ្ឋាន ទំនាក់ទំនង</option>
-            <option>នាយកដ្ឋាន ប្រហារវេទមន្ត</option>
-            <option>នាយកដ្ឋាន អាកាសនិងមេឃា</option>
+            <option disabled value class="text-black">ជ្រើសរើសអគ្គនាយកដ្ឋាន នាយកដ្ឋាន</option>
+            <option class="text-black">អគ្គនាយកដ្ឋាន ទស្សន៍ទាយ និងបង្ការគ្រោះ</option>
+            <option class="text-black">អគ្គនាយកដ្ឋាន វត្ថុទិព</option>
+            <option class="text-black">នាយកដ្ឋាន ទំនាក់ទំនង</option>
+            <option class="text-black">នាយកដ្ឋាន ប្រហារវេទមន្ត</option>
+            <option class="text-black">នាយកដ្ឋាន អាកាសនិងមេឃា</option>
           </select>
         </div>
 
@@ -83,11 +83,11 @@
         </div>
 
         <p
-          class="text-sm text-gray-500 mt-1"
+          class="text-sm text-white/75 mt-1"
         >ទិន្នន័យរបស់អ្នកមិនត្រូវបានរក្សាទុកទេ។ Your data is not stored anywhere.</p>
         <button
           type="button"
-          class="w-full bg-[#093E65] text-white font-semibold py-3 rounded-md hover:bg-[#0063AC] transition flex items-center justify-center gap-2"
+          class="w-full text-[#093E65] bg-white font-semibold py-3 rounded-md hover:bg-gray-200 transition"
           onclick="document.getElementById('card-to-download').scrollIntoView({ behavior: 'smooth' });"
         >រួចរាល់</button>
       </form>
