@@ -1,6 +1,4 @@
 @import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=Moul&family=Siemreap&family=DM+Serif+Text&display=swap");
-@import url("https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css");
 
 .moul-regular {
   font-family: "Moul", serif;
@@ -40,3 +38,5 @@ body, p, span, div, a, li, button, input, textarea {
   font-family: "Oswald", sans-serif;
   font-optical-sizing: auto;
 }
+
+

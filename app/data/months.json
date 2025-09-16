@@ -1,0 +1,14 @@
+[
+  { "id": 1, "name": "មករា", "value": "January" },
+  { "id": 2, "name": "កុម្ភៈ", "value": "February" },
+  { "id": 3, "name": "មិនា", "value": "March" },
+  { "id": 4, "name": "មេសា", "value": "April" },
+  { "id": 5, "name": "ឧសភា", "value": "May" },
+  { "id": 6, "name": "មិថុនា", "value": "June" },
+  { "id": 7, "name": "កក្កដា", "value": "July" },
+  { "id": 8, "name": "សីហា", "value": "August" },
+  { "id": 9, "name": "កញ្ញា", "value": "September" },
+  { "id": 10, "name": "តុលា", "value": "October" },
+  { "id": 11, "name": "វិច្ឆិកា", "value": "November" },
+  { "id": 12, "name": "ធ្នូ", "value": "December" }
+]
